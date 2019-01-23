@@ -1,10 +1,10 @@
 ---
-title:  "blank page"
-subtitle: "Remains to be written"
+title:  "How to write a website elegantly"
+subtitle: "Use markdown to design website"
 author: "Eric"
 avatar: "img/authors/Eric.jpg"
-image: "img/e.jpg"
-date:   2015-04-24 12:12:12
+image: "img/website.jpg"
+date:   2019-01-23 21:33:24
 ---
 
 ### Remains to be written
