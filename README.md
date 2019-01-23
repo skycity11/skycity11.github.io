@@ -1,16 +1,17 @@
-A [Jekyll](https://jekyllrb.com/) blog template made for simple, readable snippets of your brain drippings.
+# Jekyll Modern Blog
 
-[DEMO](http://adueck.github.io/cayman-blog/)
+A Simple, Clean and responsive modern blog for jekyll.
 
-To get this going follow these simple steps:
+## [Live Demo](http://inded.github.io/Jekyll_modern-blog/)
 
-1. Fork, clone, or download the repository
-2. Edit <code>_config.yml</code>
-3. If you want, swap `img/cover.jpg` for your own header image
-3. Fill up the `_posts` folder with whatever you want to say
-4. run <code>jekyll build</code> and then <code>jekyll serve</code>  
-note: This will require the `jekyll-paginate` gem `$ gem install jekyll-paginate`
+## Attributions
+Based off of this [article from Codrops](http://tympanus.net/codrops/?p=24222)
+Using Sample images from [Fancy Crave](http://fancycrave.com/)
 
-You can easily host your blog for free on [GitHub Pages](https://pages.github.com/)
+## License
 
-I made this Jekyll theme by adapting and modifying the [Cayman Theme](https://github.com/jasonlong/cayman-theme) by [Jason Lang](https://github.com/jasonlong), which is licensed under a [Creative Commons Attribution 4.0 International license](http://creativecommons.org/licenses/by/4.0/).
+Based off of this [Article on Codrops](http://tympanus.net/codrops/?p=24222)
+
+Created by Claudio Calautti for Codrops. Released under the [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html).
+
+Changes being that I made it jekyll ready and smushed the CSS together.
