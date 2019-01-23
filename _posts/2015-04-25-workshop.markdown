@@ -1,8 +1,8 @@
 ---
 title:  "Welcome to Vinericy.cn"
-subtitle: "Welcome to Eric's blog"
+subtitle: "Remains to be written"
 author: "Eric"
-avatar: "img/authors/wferr.png"
+avatar: "img/authors/Eric.jpg"
 image: "img/f.jpg"
 date:   2019-01-23 14:43:00
 ---
