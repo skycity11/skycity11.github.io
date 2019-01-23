@@ -4,7 +4,7 @@ subtitle: "此位暂缺，低价转让"
 author: "Eric"
 avatar: "img/authors/wferr.png"
 image: "img/d.jpg"
-date:   xxxx-xx-xx xx:xx:xx
+date:   2000-00-00 12:12:12
 ---
 
 ### Remains to write
