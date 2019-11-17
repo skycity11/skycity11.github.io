@@ -7,9 +7,10 @@ image: "img/a/fengmian.jpg"
 date:   2019-11-17 9:08:24
 ---
 
-# 用Verilog实现任意计数分频逻辑
-## 三分频
-### 三分频时序
+## 1 三分频
+
+### 1.1 三分频时序
+
 首先来讲三分频电路逻辑，如何实现占空比为50%的三分频，也是硬件逻辑笔试题中常提的问题。
 
 其实三分频电路有很多种方法，这里选用其中一种：
@@ -17,7 +18,8 @@ date:   2019-11-17 9:08:24
 先对时钟信号进行上升沿和下降沿触发的两个模三计数，当计数器计数到0和1时进行两次翻转，从而求出两个占空比为1/3的频率波形，分别为上升沿触发和下降沿触发，再将两个信号波形进行或运算。时序图如下：
 ![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/shixu.png)
 
-### 三分频代码
+### 1.2 三分频代码
+
 1.对上升沿和下降沿分别进行模三计数
 ```
 reg	[15:0]	cnt_pos;    //上升沿计数
@@ -75,15 +77,17 @@ end
 assign	clk_out = clk_pos | clk_neg;
 ```
 
-### 三分频仿真实现
+### 1.3 三分频仿真实现
+
 用modelsim对逻辑代码进行仿真，得到的仿真图如下：
 ![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/div_3.png)
 
-## 任意奇数分频
-### 任意奇数分频逻辑
+## 2 任意奇数分频
+### 2.1 任意奇数分频逻辑
+
 任意奇数分频只要在三分频的基础上进行修改即可，比如进行N分频，就让计数器进行模N计数，然后在计数到0和(N-1)/2的时候翻转，其余不变。
 
-### 任意奇数分频代码
+### 2.2 任意奇数分频代码
 ```
 module	divide_N
 #(parameter DIV = 7)
@@ -143,7 +147,7 @@ assign	clk_out = clk_pos | clk_neg;
 endmodule
 ```
 
-### 任意奇数分频测试模块代码
+### 2.3 任意奇数分频测试模块代码
 ```
 `timescale 1ns/1ns
 `define CLK50M_PERIOD 20
@@ -176,7 +180,7 @@ divide_N
 
 endmodule
 ```
-### 任意奇数分频仿真实现
+### 2.4 任意奇数分频仿真实现
 以7分频为例
 ![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/div_7.png)
 
