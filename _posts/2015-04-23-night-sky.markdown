@@ -1,9 +1,0 @@
----
-title:  "blank page"
-subtitle: "Remains to be written"
-author: "Eric"
-avatar: "img/authors/Eric.jpg"
-image: "img/d.jpg"
-date:   2015-04-23 12:12:12
----
-
