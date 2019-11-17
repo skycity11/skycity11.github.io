@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "任意奇数分频逻辑"
+title:  "divide-clock"
 date:   2019-11-17 11:07:36 +0530
 categories: FPGA Verilog
 ---
