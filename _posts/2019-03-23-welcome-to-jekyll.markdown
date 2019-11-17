@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "任意奇数分频逻辑"
-date:   2019-03-23 21:03:36 +0530
+date:   2019-11-17 11:07:36 +0530
 categories: FPGA Verilog
 ---
 # 1 三分频
