@@ -1,0 +1,15 @@
+---
+title:  "Welcome to Vinericy.cn"
+subtitle: "Welcome to Eric's blog"
+author: "Eric"
+avatar: "img/authors/Eric.jpg"
+image: "img/f.jpg"
+date:   2019-01-23 14:43:00
+---
+
+### Why do I write this blog?
+Emmmmmmmmmmmmm。。。。。。  
+为了向金银大佬同志学习 @我的娃呐.top
+
+### What will I write in this blog？
+My study experience about STM32,FPGA and other newbee stuff.
