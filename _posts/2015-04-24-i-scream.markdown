@@ -6,7 +6,6 @@ avatar: "img/authors/Eric.jpg"
 image: "img/a/fengmian.jpg"
 date:   2019-11-17 9:08:24
 ---
------
 
 
 # 1 三分频
@@ -19,17 +18,16 @@ date:   2019-11-17 9:08:24
 ## 1.2 三分频代码
 
 ### 对上升沿和下降沿分别进行模三计数
-```verilog
-reg	[15:0]	cnt_pos;    //上升沿计数
-always@(posedge clk_in or negedge rst_n) begin
-	if(!rst_n)
-		cnt_pos <= 1'b0;
-	else if(cnt_pos == 0)
-		cnt_pos <= 1'b0;
-	else
-		cnt_pos <= cnt_pos + 1'b1;
-end
-```
+    reg	[15:0]	cnt_pos;    //上升沿计数
+    always@(posedge clk_in or negedge rst_n) begin
+    if(!rst_n)
+    cnt_pos <= 1'b0;
+    else if(cnt_pos == 0)
+    cnt_pos <= 1'b0;
+    else
+    cnt_pos <= cnt_pos + 1'b1;
+    end
+
 ```
 reg	[15:0]	cnt_neg;    //下降沿计数
 always@(negedge clk_in or negedge rst_n) begin
