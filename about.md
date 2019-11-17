@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "About Me"
-css: ["about.css", "animate.css", "morphext.css"]
-js: ["morphext.min.js", "about.js"]
+title: 关于
+permalink: /about/
 ---
-{% include about.html %}
+
+这是一个关于页面，请编辑about.md以介绍你的博客。
