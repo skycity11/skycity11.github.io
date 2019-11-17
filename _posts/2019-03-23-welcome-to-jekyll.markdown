@@ -9,7 +9,7 @@ categories: Javascript NodeJS
 
 ### 首先来讲三分频电路逻辑，如何实现占空比为50%的三分频，也是硬件逻辑笔试题中常提的问题。其实三分频电路有很多种方法，这里选用其中一种：
 ### 先对时钟信号进行上升沿和下降沿触发的两个模三计数，当计数器计数到0和1时进行两次翻转，从而求出两个占空比为1/3的频率波形，分别为上升沿触发和下降沿触发，再将两个信号波形进行或运算。时序图如下：
-![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/shixu.png)
+![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/1/shixu.png)
 
 ## 1.2 三分频代码
 
@@ -73,7 +73,7 @@ assign	clk_out = clk_pos | clk_neg;
 ## 1.3 三分频仿真实现
 
 ### 用modelsim对逻辑代码进行仿真，得到的仿真图如下：
-![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/div_3.png)
+![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/1/div_3.png)
 
 # 2 任意奇数分频
 ## 2.1 任意奇数分频逻辑
@@ -175,7 +175,7 @@ endmodule
 ```
 ## 2.4 任意奇数分频仿真实现
 ### 以7分频为例:
-![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/div_7.png)
+![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/1/div_7.png)
 
 ### 就写到这里吧
 —————————————————————————————————————
