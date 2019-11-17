@@ -41,6 +41,16 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+<<<<<<< HEAD
 sass:
   style: compressed
 future: true
+=======
+  - LICENSE
+  - README.md
+  - CNAME
+
+excerpt_separator: ---
+
+theme: jekyll-theme-slate
+>>>>>>> 6ddb3d396676a12a674ff3927605f1cc3f65b766
