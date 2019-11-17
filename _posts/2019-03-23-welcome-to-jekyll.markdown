@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Integrating razorpay into your webapp"
+title:  "任意奇数分频逻辑"
 date:   2019-03-23 21:03:36 +0530
-categories: Javascript NodeJS
+categories: FPGA Verilog
 ---
 # 1 三分频
 ## 1.1 三分频时序
@@ -25,7 +25,7 @@ always@(posedge clk_in or negedge rst_n) begin
 		cnt_pos <= cnt_pos + 1'b1;
 end
 ```
-```
+```verilog
 reg	[15:0]	cnt_neg;    //下降沿计数
 always@(negedge clk_in or negedge rst_n) begin
 	if(!rst_n)
@@ -38,7 +38,7 @@ end
 ```
 
 ### 当计数器计数到0和1时进行两次翻转
-```
+```verilog
 reg	clk_pos;    //  上升沿触发时钟
 always@(posedge clk_in or negedge rst_n) begin
 	if(!rst_n)
@@ -51,7 +51,7 @@ always@(posedge clk_in or negedge rst_n) begin
 		clk_pos <= clk_pos;
 end
 ```
-```
+```verilog
 reg	clk_neg;
 always@(negedge clk_in or negedge rst_n) begin
 	if(!rst_n)
@@ -66,7 +66,7 @@ end
 ```
 
 ### 将两个信号波形进行或运算
-```
+```verilog
 assign	clk_out = clk_pos | clk_neg;
 ```
 
@@ -81,7 +81,7 @@ assign	clk_out = clk_pos | clk_neg;
 ### 任意奇数分频只要在三分频的基础上进行修改即可，比如进行N分频，就让计数器进行模N计数，然后在计数到0和(N-1)/2的时候翻转，其余不变。
 
 ## 2.2 任意奇数分频代码
-```
+```verilog
 module	divide_N
 #(parameter DIV = 7)
 (		input		clk_in,
@@ -141,7 +141,7 @@ endmodule
 ```
 
 ## 2.3 任意奇数分频测试模块代码
-```
+```verilog
 `timescale 1ns/1ns
 `define CLK50M_PERIOD 20
 
