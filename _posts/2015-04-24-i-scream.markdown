@@ -18,7 +18,7 @@ date:   2019-11-17 9:08:24
 
 ### 1.2 三分频代码
 
-1.对上升沿和下降沿分别进行模三计数
+#### 1.对上升沿和下降沿分别进行模三计数
 ```verilog
 reg	[15:0]	cnt_pos;    //上升沿计数
 always@(posedge clk_in or negedge rst_n) begin
@@ -42,7 +42,7 @@ always@(negedge clk_in or negedge rst_n) begin
 end
 ```
 
-2.当计数器计数到0和1时进行两次翻转
+#### 2.当计数器计数到0和1时进行两次翻转
 ```
 reg	clk_pos;    //  上升沿触发时钟
 always@(posedge clk_in or negedge rst_n) begin
@@ -70,20 +70,20 @@ always@(negedge clk_in or negedge rst_n) begin
 end
 ```
 
-3.将两个信号波形进行或运算
+#### 3.将两个信号波形进行或运算
 ```
 assign	clk_out = clk_pos | clk_neg;
 ```
 
 ### 1.3 三分频仿真实现
 
-用modelsim对逻辑代码进行仿真，得到的仿真图如下：
+#### 用modelsim对逻辑代码进行仿真，得到的仿真图如下：
 ![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/div_3.png)
 
 ## 2 任意奇数分频
 ### 2.1 任意奇数分频逻辑
 
-任意奇数分频只要在三分频的基础上进行修改即可，比如进行N分频，就让计数器进行模N计数，然后在计数到0和(N-1)/2的时候翻转，其余不变。
+#### 任意奇数分频只要在三分频的基础上进行修改即可，比如进行N分频，就让计数器进行模N计数，然后在计数到0和(N-1)/2的时候翻转，其余不变。
 
 ### 2.2 任意奇数分频代码
 ```
@@ -179,8 +179,8 @@ divide_N
 endmodule
 ```
 ### 2.4 任意奇数分频仿真实现
-以7分频为例
+#### 以7分频为例:
 ![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/a/div_7.png)
 
-就写到这里吧
+#### 就写到这里吧
 —————————————————————————————————————
