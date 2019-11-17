@@ -1,10 +1,11 @@
 ---
-title:  "How to write a website elegantly"
-subtitle: "Use markdown to design website"
+title:  "任意奇数分频逻辑"
+subtitle: "Verilog-实现时钟的奇数分频"
 author: "Eric"
 avatar: "img/authors/Eric.jpg"
-image: "img/website.jpg"
-date:   2019-01-23 21:33:24
+image: "img/a/1.jpg"
+date:   2019-11-17 9:08:24
 ---
 
-### Remains to be written
+### 任意奇数分频逻辑
+![avatar]("img/a/1.jpg")

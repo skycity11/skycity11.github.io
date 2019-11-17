@@ -7,4 +7,3 @@ image: "img/d.jpg"
 date:   2015-04-23 12:12:12
 ---
 
-### Remains to be written
