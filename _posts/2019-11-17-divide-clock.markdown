@@ -182,7 +182,6 @@ endmodule
 ### 以7分频为例:
 ![Aaron Swartz](https://github.com/skycity11/skycity11.github.io/raw/master/img/1/div_7.png)
 
-### 就写到这里吧
 —————————————————————————————————————
 
 [HOME][home]

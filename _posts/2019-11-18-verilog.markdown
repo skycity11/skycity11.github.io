@@ -5,20 +5,21 @@ date:   2019-11-18 16:09:00 +0530
 categories: FPGA Verilog
 ---
 
-总结一些Verilog常用小模块和语法。
+总结一些Verilog常用模块和语法。
 
 —————————————————————————————————————
-# 1 verilog常用小模块
+# 1 verilog常用模块
 ## 1.1 上升沿及下降沿检测
 ```verilog
-reg		pulze_r1;
-reg		pulze_r2;
+input	pulze;
 wire	pulze_rise;
 wire	pulze_fall;
 
 assign pulze_rise = ~pulze_r2 & pulze_r1;	//检测上升沿
 assign pulze_fall = pulze_r2 & ~pulze_r1;	//检测下降沿
 
+reg		pulze_r1;
+reg		pulze_r2;
 always @(posedge clk_50m or negedge rst_n) begin
 	if(!rst_n) begin
 		pulze_r1 <= 1'b0;
@@ -31,8 +32,7 @@ always @(posedge clk_50m or negedge rst_n) begin
 end
 ```
 
-—————————————————————————————————————
-### 就写到这里吧
+
 —————————————————————————————————————
 
 [HOME][home]
