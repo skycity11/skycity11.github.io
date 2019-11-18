@@ -5,10 +5,10 @@ date:   2019-11-18 16:09:00 +0530
 categories: FPGA Verilog Testbench
 ---
 
-总写一些testbench语法和仿真时出现的问题。
+总结一些testbench常用模块和语法以及仿真时出现的问题。
 
 —————————————————————————————————————
-# 1 testbench常用功能模块
+# 1 testbench常用小模块
 ## 1.1 时钟产生模块
 产生50MHz时钟模块：
 ```verilog
