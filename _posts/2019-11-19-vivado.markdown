@@ -13,7 +13,7 @@ categories: FPGA Verilog Xilinx
 ```verilog
 always @(posedge clk or negedge rst_n)
 ```
-这是写Verilog时很常用的一个语句，但是在Vivado中这么写会导致Bitstream，如图所示：
+这是写Verilog时很常用的一个语句，但是在Vivado中这么写会在Generate Bitstream这一步中报错，如图所示：
 
 ![error](https://github.com/skycity11/skycity11.github.io/raw/master/img/vivado/error.png)
 
