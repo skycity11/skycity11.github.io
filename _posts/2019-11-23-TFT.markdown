@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "TFT控制器"
+date:   2019-11-23 15:01:00 +0530
+categories: FPGA Verilog VGA TFT
+---
+
+编写TFT控制器来实现不同的显示输出。
+
+—————————————————————————————————————
+
+## 1 TFT图片显示
+将400*240分辨率的图片存储到ROM中，输出到800*480分辨率的TFT显示屏上。
+
+[TFT_picture](https://github.com/skycity11/TFT_picture)
+
+![TFT_picture_jpg](https://github.com/skycity11/skycity11.github.io/raw/master/img/TFT/TFT_picture.jpg)
+
+## 2 TFT显示
+
+—————————————————————————————————————
+
+[HOME][home]
+
+[home]: https://vinericy.cn
+
