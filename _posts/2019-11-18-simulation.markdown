@@ -38,6 +38,7 @@ task key_press;		//定义
 		#200000;
 		key = 0;
 	end
+endtask
 ```
 
 ## 2.2 repeat语法
