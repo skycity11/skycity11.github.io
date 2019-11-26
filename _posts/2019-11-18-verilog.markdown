@@ -20,8 +20,8 @@ assign variable_rise = ~variable_r2 & variable_r1;	//检测上升沿
 
 always @(posedge clk_50m or negedge rst_n) begin
 	if(!rst_n) begin
-		variable_r1 <= 1'b0;
-		variable_r2 <= 1'b0;
+		variable_r1 <= 1'b1;
+		variable_r2 <= 1'b1;
 	end
 	else begin
 		variable_r1 <= variable;
