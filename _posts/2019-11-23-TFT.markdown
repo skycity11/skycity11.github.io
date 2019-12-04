@@ -32,6 +32,18 @@ categories: FPGA Verilog VGA TFT
 工程文件在GitHub：[TFT_SDRAM](https://github.com/skycity11/TFT_SDRAM)
 
 
+## 4 基于AD7928的虚拟示波器设计
+
+用SPI通信实现FPGA与AD7928的通信，并将adc获得的数字信号用TFT屏显示。
+AD7928的SPI通信协议时序图如下所示：
+
+![Oscilloscope_time.png](https://github.com/skycity11/skycity11.github.io/raw/master/img/TFT/Oscilloscope_time.png)
+
+系统整体框图如下所示：
+![Oscilloscope_rtl.png](https://github.com/skycity11/skycity11.github.io/raw/master/img/TFT/Oscilloscope_rtl.png)
+
+
+工程文件在GitHub：[TFT_SDRAM](https://github.com/skycity11/Oscilloscope)
 —————————————————————————————————————
 
 [HOME][home]
