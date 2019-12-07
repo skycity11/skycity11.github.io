@@ -53,7 +53,7 @@ always @(posedge clk_50m or negedge rst_n) begin
 end
 ```
 
-## 1.1 跑马灯
+## 1.2 跑马灯
 
 参数N设定灯的个数，参数TIMEOUT设定亮灯时间间隔。
 
