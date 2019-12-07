@@ -10,7 +10,9 @@ categories: FPGA Verilog
 —————————————————————————————————————
 # 1 verilog常用模块
 ## 1.1 上升沿及下降沿检测
+
 上升沿
+
 ```verilog
 wire	variable_rise;
 reg		variable_r1;
@@ -29,7 +31,9 @@ always @(posedge clk_50m or negedge rst_n) begin
 	end
 end
 ```
+
 下降沿
+
 ```verilog
 wire	variable_fall;
 reg		variable_r1;
@@ -47,6 +51,46 @@ always @(posedge clk_50m or negedge rst_n) begin
 		variable_r2 <= variable_r1;
 	end
 end
+```
+
+## 1.1 跑马灯
+
+参数N设定灯的个数，参数TIMEOUT设定亮灯时间间隔。
+
+如设定N为10，TIMEOUT为5M，系统时钟是DE1-SOC的50M时钟，则亮灯间隔是0.1s。
+
+```verilog
+module	led
+#(	parameter N = 10,
+	parameter TIMEOUT = 32'd5_000_000)
+ (	input								clk,
+	input								rst_n,
+	output	reg	[N-1 : 0]	led
+);
+
+reg	[31:0]	cnt;	//确定亮灯的时间间隔
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n)
+		cnt <= 'h0;
+	else if(cnt == TIMEOUT - 1'b1)
+		cnt <= 'h0;
+	else
+		cnt <= cnt + 1'b1;
+end
+
+always @(posedge clk or negedge rst_n) begin
+	if(!rst_n)
+		led <= 'b1;
+	else if(cnt == TIMEOUT - 1'b1)
+		if(led[N-1] == 1'b1)
+			led <= 'b1;
+		else
+			led <= led << 1;
+	else
+		led <= led;
+end
+
+endmodule
 ```
 —————————————————————————————————————
 
