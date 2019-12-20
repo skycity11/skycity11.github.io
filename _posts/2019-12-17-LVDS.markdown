@@ -36,6 +36,37 @@ LVDS工作原理
     * 1电平：V+有3.5mA电流通过，在发送和接收端产生350mV压差，V-无电流通过。
     * 0电平：V-有3.5mA电流通过，在发送和接收端产生350mV压差，V+无电流通过。
 
+LVDS_TX IP核配置（结合实例）
+* LVDS_TX的目的是将并行的数据转化成高速串行的串行数据，串行数据的传输速率取决于输入时钟、串化因子和通道数。若为10位并行数据，则将输入时钟10倍频，每个上升沿传一位数据即可。此时串化因子为10，通道数为1。
+  
+  但串化因子的上限位10，如果并行数据是10位以上，比如为21位，此时只能增加通道数。将输入时钟7倍频，每一位
+* LVDS数据速率 = LVDS时钟频率 × 串化因子
+  * 175Mb/s = 25MHz × 7
+* Parameter Settings:
+  * General
+    * LVDS的通道数 = 3（Channels number）
+    * 串化因子(数据位宽) = 7（deserialization factor）
+  * Frequency/PLL settings
+    * 单通道的LVDS数据速率 = 175Mb/s（output data rate）
+    * LVDS时钟速率 = 25MHz（input clock rate）
+    * 使用pll复位端口（Use 'pll_areset' input port）
+    * 寄存器tx_in使用 = (tx_inclock)（Register 'tx_in' input port using）
+  * Transmitter settings
+    * 输出时钟分频系数 = 7（outclock divide factor）
+    * 输出时钟相位偏差 = 0.00（Specify phase alignment）
+    * 输出时钟占空比 = 57%（outclock ducy cycle）
+```verilog
+lvds	lvds_inst (
+	.pll_areset ( pll_areset_sig ),
+	.tx_in ( tx_in_sig ),
+	.tx_inclock ( tx_inclock_sig ),
+	.tx_out ( tx_out_sig ),
+	.tx_outclock ( tx_outclock_sig )
+	);
+```
+
+![lvds_time](https://github.com/skycity11/skycity11.github.io/raw/master/img/LVDS/lvds_time.png)
+
 
 —————————————————————————————————————
 
