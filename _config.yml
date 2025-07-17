@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: SkyCity@gmail.com
 description: "这里是 SkyCity的个人博客，与你一起发现更大的世界"
 keyword: "Eric, SkyCity, 博客, 个人网站, 互联网, Web, Verilog, 芯片，设计，FPGA"
-url: "https://huangxuan.me" # your host, for absolute URL
+url: "https://skycity11.github.io" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
