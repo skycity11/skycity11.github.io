@@ -4,7 +4,7 @@ title:        "Markdown学习"
 author:       "Eric"
 header-style: text
 hidden:       true
-catalog:      work
+category:     work
 tags:
     - markdown
 ---
