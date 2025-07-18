@@ -22,16 +22,14 @@ tags:
 要实现通过特定URL访问隐藏的分类文章，同时不让这些文章出现在**首页或其他公开位置**。
 
 **方法分析：**
-如果只是不想让文章出现在首页 → 方法1（hidden: true）
-如果希望完全隐藏，除非知道 URL → 方法2（_drafts）
-如果需要更严格的访问控制 → 方法3（私有分支）
+* 如果只是不想让文章出现在首页 → 方法1（hidden: true）
+* 如果希望完全隐藏，除非知道 URL → 方法2（_drafts）
+* 如果需要更严格的访问控制 → 方法3（私有分支）
 
 *本文中只介绍**方法1***
 
 **举例说明:** 
 比如想要将work分类下的文章隐藏起来，输入`https://<your-site>/work`才可以看到
-
-—————————————————————————————————————
 
 ## 具体步骤
 
@@ -52,7 +50,8 @@ hidden: false  # 在首页显示
 ### 2. 在_config.yml添加内容确保首页不显示 hidden 文章
 * 在首页只显示hidden属性为false的文章
 
-```markdown
+{% raw %}
+```yaml
 defaults:
   - scope:
       path: ""
@@ -60,12 +59,14 @@ defaults:
     values:
       hidden: false
 ```
+{% endraw %}
 
 ### 3. 创建 /work/index.html 页面
 * 该步骤目的是在`https://<your-site>/work`中**只显示**work分类的文章
 * 将根目录的index.html直接**复制**到新建目录work下，在此基础上做一些修改
-   1) Front Matter中加入`permalink: /work/`，以设置访问路径是`https://<your-site>/work`
-   2) 在`for post in site.posts`中加入 {% if post.category ** "work" %}的判断，并用`{% endif %}`收尾，以确保只显示work分类的文章
+
+1. Front Matter中加入`permalink: /work/`，以设置访问路径是`https://<your-site>/work`
+2. 在`for post in site.posts`中加入 {% if post.category ** "work" %}的判断，并用`{% endif %}`收尾，以确保只显示work分类的文章
 * **以我的index.html为例**
   * 有些个人博客（比如我）搭建时用了**分页插件**（比如**jekyll-paginate**），所以首页的 index.html 里用的是 `paginator.posts`，而不是 `site.posts`。但分页插件 `paginator`只在首页生效，所以/work页面还是需要`site.posts`，只需都替换成`site.posts`即可
 * **修改后**我的work/index.html如下

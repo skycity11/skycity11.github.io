@@ -37,6 +37,7 @@ tags:
 
 1. 在github中**新建一个仓库**，如picture，之后该目录的https地址将会用到，如`https://github.com/username/picture`
 2. 在github中**获取个人访问令牌**，从而vscode中的插件获得访问picture库的权限
+   
       1) 进入github，点击右上角头像进入settings，左边栏拉到最下找到Developer settings
       ![图 3](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/b1ea5b8107a746a50438f1fe527827fad7039aa40c31cb7ef8a9264fc316c2b3.png)  
       ![图 4](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/d34c0bb254c3ccb986f4f3402afed09cf6e34bd71e52f6eca7ac8ce879e161ca.png)
