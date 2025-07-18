@@ -22,7 +22,7 @@ description: "「zen zen wa ga la nai」"
                 {{ post.content | strip_html | truncate:200 }}
             {% endif %}
         -->
-        {{ post.content | strip_html | split: '\n' | first | truncate: 100 }}
+        {{ post.excerpt | strip_html | truncate: 100 }}
         </div>
     </a>
     <p class="post-meta">
