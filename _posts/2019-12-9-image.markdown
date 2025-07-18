@@ -104,7 +104,8 @@ categories: FPGA Verilog Image-Processing
 
 —————————————————————————————————————
 
-[HOME][home]
+[首页][home]
 
 [home]: https://blog.skycity11.xyz
+
 

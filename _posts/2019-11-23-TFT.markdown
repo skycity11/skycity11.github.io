@@ -48,7 +48,8 @@ AD7928的SPI通信协议时序图如下所示：
 
 —————————————————————————————————————
 
-[HOME][home]
+[首页][home]
 
 [home]: https://blog.skycity11.xyz
+
 

@@ -25,7 +25,7 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets rst_n_IBUF]
 
 —————————————————————————————————————
 
-[HOME][home]
+[首页][home]
 
 [home]: https://blog.skycity11.xyz
 
