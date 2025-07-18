@@ -23,9 +23,7 @@ tags:
 
 **方法分析：**
 如果只是不想让文章出现在首页 → 方法1（hidden: true）
-
 如果希望完全隐藏，除非知道 URL → 方法2（_drafts）
-
 如果需要更严格的访问控制 → 方法3（私有分支）
 
 *本文中只介绍**方法1***
@@ -69,15 +67,15 @@ defaults:
   * 有些个人博客（比如我）搭建时用了**分页插件**（比如**jekyll-paginate**），所以首页的 index.html 里用的是 `paginator.posts`，而不是 `site.posts`。但分页插件 `paginator`只在首页生效，所以/work页面还是需要`site.posts`，只需都替换成`site.posts`即可
 * **修改后**我的work/index.html如下
 
-```markdown
+```
 ---
 layout: page
 description: "「work」"
-permalink: /work/  #设置访问路径
+permalink: /work/  
 ---
 
 {% for post in site.posts %}
-  {% if post.category ** "work" %} # 如果属于work分类
+  {% if post.category ** "work" %} 
     <div class="post-preview">
         <a href="{{ post.url | prepend: site.baseurl }}">
             <h2 class="post-title">
@@ -100,7 +98,7 @@ permalink: /work/  #设置访问路径
             Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
         </p>
     </div>
-  {% endif %} # end for 如果属于work分类
+  {% endif %} 
 <hr>
 {% endfor %}
 ```
