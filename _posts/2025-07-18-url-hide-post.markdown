@@ -36,16 +36,20 @@ tags:
 ### 1. 在文章的 Front Matter 中添加 hidden: true 和 category: work
 * 给**隐藏文章**设置，隐藏属性为**是**，分类为**work**
 
-```markdown
+{% raw %}
+```yaml
 hidden: true  # 不在首页显示
 category: work  # 属于 work 分类
 ```
+{% endraw %}
 
 * 给**正常文章**设置，隐藏属性为**否**
 
-```markdown
+{% raw %}
+```yaml
 hidden: false  # 在首页显示
 ```
+{% endraw %}
 
 ### 2. 在_config.yml添加内容确保首页不显示 hidden 文章
 * 在首页只显示hidden属性为false的文章
