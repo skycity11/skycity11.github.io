@@ -1,8 +1,16 @@
 ---
 layout: page
-description: "「work」"
+description: "「work1」"
 permalink: /work/
 ---
+
+{% for post in site.posts %}
+  <p>
+    标题: {{ post.title }} | 
+    Category: {{ post.category }} |
+    URL: {{ post.url }}
+  </p>
+{% endfor %}
 
 {% for post in paginator.posts %}
     <div class="post-preview">
