@@ -6,6 +6,8 @@ author: "Hux"
 header-img: "img/post-bg-infinity.jpg"
 header-mask: 0.3
 mathjax: true
+category: past
+hidden: true
 tags:
   - 知乎
   - 计算理论

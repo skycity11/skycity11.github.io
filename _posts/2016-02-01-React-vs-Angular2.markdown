@@ -7,6 +7,8 @@ author:     "Hux"
 header-img: "img/post-bg-re-vs-ng2.jpg"
 header-mask: 0.3
 catalog:    true
+category: past
+hidden: true
 tags:
   - Web
   - JavaScript

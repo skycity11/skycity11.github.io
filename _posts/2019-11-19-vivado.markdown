@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Vivado使用注意事项"
+date:   2019-11-19 21:14:00 +0530
+categories: FPGA Verilog Xilinx
+---
+
+总结一些使用Vivado时的注意事项，主要是与Quartus使用的区别
+
+—————————————————————————————————————
+
+## 1 Reset信号的IO配置
+```verilog
+always @(posedge clk or negedge rst_n)
+```
+这是写Verilog时很常用的一个语句，但是在Vivado中这么写会在Generate Bitstream这一步中报错，如图所示：
+
+![error](https://github.com/skycity11/skycity11.github.io/raw/master/img/vivado/error.png)
+
+为了避免这个错误，需要在XDR中加一条:
+```
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets rst_n_IBUF] 
+```
+原因是，从外部来的（接到板子上的）always语句中的敏感信号为时钟以外的外部信号，Vivado在处理外部时钟信号的时候会自动添加BUFG模块来去除时钟的抖动，但是其他信号（此处的rst_n）就不会这样做，这样的话在always语句的敏感信号列表中使用没有去抖动的外部信号就有可能导致系统不稳定，所以会出现这个错误。
+
+—————————————————————————————————————
+
+[HOME][home]
+
+[home]: https://vinericy.cn
+

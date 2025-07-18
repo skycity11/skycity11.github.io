@@ -4,6 +4,8 @@ title:        "每日任务"
 author:       "Eric"
 header-style: text
 catalog: true
+category: work
+hidden: true
 tags:
     - daily
     - task

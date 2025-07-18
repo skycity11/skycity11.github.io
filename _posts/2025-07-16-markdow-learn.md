@@ -3,9 +3,9 @@ layout:       post
 title:        "Markdown学习"
 author:       "Eric"
 header-style: text
-hidden:       true
+hidden:       false
 catalog:      true
-category:     work
+category:     common
 tags:
     - markdown
 ---

@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "TFT控制器"
+date:   2019-11-23 15:01:00 +0530
+categories: FPGA Verilog VGA TFT
+---
+
+编写TFT控制器来实现不同的显示输出。
+
+—————————————————————————————————————
+
+## 1 TFT图片显示
+将400*240分辨率的图片存储到ROM中，输出到800*480分辨率的TFT显示屏上。
+实现结果如下图：
+
+![TFT_picture_jpg](https://github.com/skycity11/skycity11.github.io/raw/master/img/TFT/TFT_picture.jpg)
+
+工程文件在GitHub：[TFT_picture](https://github.com/skycity11/TFT_picture)
+
+## 2 TFT字符动态显示
+在TFT显示屏上实现中英文和数字的动态显示。
+将字符(单个字符16*16像素)转换成图片，再输出到TFT显示屏上。
+自定义10个ROM存储0~9的数字，从而实现任意输入数字显示。
+对时钟分频，实现1s间隔的动态显示。
+
+工程文件在GitHub：[TFT_char](https://github.com/skycity11/TFT_char)
+
+## 3 基于SDRAM的TFT显示
+
+用SDRAM读写器16位RGB数据显示到TFT屏上，实现颜色动态变化。
+
+工程文件在GitHub：[TFT_SDRAM](https://github.com/skycity11/TFT_SDRAM)
+
+
+## 4 基于AD7928的虚拟示波器设计
+
+用SPI通信实现FPGA与AD7928的通信，并将adc获得的数字信号用TFT屏显示。
+实现1MSPS的吞吐速率（SPS=Samples Per Second），12位位宽。
+AD7928的SPI通信协议时序图如下所示：
+
+![Oscilloscope_time.png](https://github.com/skycity11/skycity11.github.io/raw/master/img/TFT/Oscilloscope_time.png)
+
+系统整体框图如下所示：
+
+![Oscilloscope_rtl.png](https://github.com/skycity11/skycity11.github.io/raw/master/img/TFT/Oscilloscope_rtl.png)
+
+工程文件在GitHub：[Oscilloscope](https://github.com/skycity11/Oscilloscope)
+
+—————————————————————————————————————
+
+[HOME][home]
+
+[home]: https://vinericy.cn
+

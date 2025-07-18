@@ -6,6 +6,8 @@ iframe:     "//huangxuan.me/pwa-qcon2016/"
 navcolor:   "invert"
 date:       2016-10-20
 author:     "Hux"
+category: past
+hidden: true
 tags:
     - Slides
     - Web

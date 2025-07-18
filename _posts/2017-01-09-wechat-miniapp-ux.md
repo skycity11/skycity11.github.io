@@ -5,6 +5,8 @@ subtitle: "Wechat Mini-Program vs. the Web, a UX comparison"
 author: "Hux"
 header-img: ""
 header-bg-css: "linear-gradient(to right, #24b94a, #38ef7d);"
+category: past
+hidden: true
 tags:
   - Web
   - 微信

@@ -5,6 +5,8 @@ date:         2018-05-11 12:00:00
 author:       "Hux"
 header-style: text
 catalog:      true
+category: past
+hidden: true
 tags:
     - Web
     - PWA

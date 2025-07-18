@@ -5,6 +5,8 @@ subtitle: 'From Vim to Spacemacs'
 author: "Hux"
 header-style: text
 published: false
+category: past
+hidden: true
 tags:
   - Vim
   - Emacs

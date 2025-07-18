@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "FPGA基本原理"
+date:   2019-12-25 15:04:00 +0530
+categories: FPGA Verilog High-Speed-Processing
+---
+
+FPGA基本结构和原理
+
+—————————————————————————————————————
+
+### 1 FPGA基本结构
+
+FPGA组成三要素
+
+* 可编程逻辑功能块（逻辑单元）
+  * 实现用户功能的基本单元，多个通常规则地排成一个阵列结构，分布于整个芯片
+    * 查找表
+    * D触发器
+    * 进位线
+* 片内互联线（Programmable Interconnect）
+* 输入输出块（I/O）
+
+—————————————————————————————————————
+
+[HOME][home]
+
+[home]: https://vinericy.cn
+

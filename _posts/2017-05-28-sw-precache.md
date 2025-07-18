@@ -4,6 +4,8 @@ title: How does SW-Precache works?
 author: "Hux"
 header-style: text
 lang: en
+category: past
+hidden: true
 tags:
   - Web
   - PWA

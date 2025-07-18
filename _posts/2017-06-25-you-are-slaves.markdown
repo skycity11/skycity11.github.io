@@ -6,6 +6,8 @@ author:     "Hux"
 header-style: text
 catalog: false
 published: false
+category: past
+hidden: true
 tags:
   - 被夹
 ---

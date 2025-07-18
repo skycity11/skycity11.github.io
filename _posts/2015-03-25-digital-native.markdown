@@ -5,6 +5,8 @@ subtitle:   " 两岁的侄女天天叫着手机手机 "
 date:       2015-03-25 
 author:     "Hux"
 header-img: "img/post-bg-digital-native.jpg"
+category: past
+hidden: true
 catalog: true
 tags:
     - hUX 随想录

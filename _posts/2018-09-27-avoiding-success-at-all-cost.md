@@ -5,6 +5,8 @@ subtitle: 'Watching "Escape from the Ivory Tower: The Haskell Journey"'
 author: "Hux"
 header-style: text
 lang: en
+category: past
+hidden: true
 tags:
   - Haskell
   - 笔记

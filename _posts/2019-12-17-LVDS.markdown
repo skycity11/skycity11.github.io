@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "LVDS概述"
+date:   2019-12-17 20:04:00 +0530
+categories: FPGA Verilog High-Speed-Processing
+---
+
+LVDS信号简介、接口概述，LVDS的IP核创建与配置
+
+—————————————————————————————————————
+
+### 1 LVDS接口概述
+LVDS(Low-Voltage Differential Signaling)低电压差分信号，是一种信号传输模式、电平标准。
+
+LVDS接口又称RS-644总线接口。
+
+LVDS技术核心
+* 采用极低的电压摆幅高速差动传输数据
+* 点对点、一点对多点的连接
+* 低功耗、低误码率、低串扰和低辐射特点
+* 相比于LVTTL或LVCMOS电平标准可以极大提升单通道数据速率
+* 相比于并行接口传输数据，LVDS串口通信接口传输数据可以节省系统的电缆和连接器成本，并且可以减少连接器占用面积所需的物理空间。
+
+LVDS使用注意点
+* 关注相关IP核与内部逻辑之间的接口实现
+
+LVDS工作原理
+* LVDS信号由三部分组成
+    * 差分信号发送器：将非平衡传输的TTL信号转换成平衡传输的LVDS信号。
+    * 差分信号接收器：将LVDS信号转换成TTL信号。
+    * 差分信号互连器：包括连接线和终端匹配电阻。
+* LVDS接口使用1.2V偏执电压作为基准，正负端摆幅350mV，即差模电压。
+    * 驱动差分线对的电流源组成（3.5mA），终端电阻为100Ω，电压摆动幅度为350mV
+* LVDS用来传输高速变化信号的原因：LVDS信号物理电平变化在0.85V~1.55V,由0到1电平变化的时间比TTL电平变化要快得多。且低功耗。
+* LVDS传输的一个通道有两个信号：V+和V-，电平相反，称之为差分对。
+    * 1电平：V+有3.5mA电流通过，在发送和接收端产生350mV压差，V-无电流通过。
+    * 0电平：V-有3.5mA电流通过，在发送和接收端产生350mV压差，V+无电流通过。
+
+LVDS_TX IP核配置（结合实例）
+* LVDS_TX的目的是将并行的数据转化成高速串行的串行数据，串行数据位数就是LVDS通道数，串行数据的传输速率输入时钟与串化因子的乘积。若为10位并行数据，则将输入时钟10倍频，每个上升沿传一位数据即可。此时串化因子为10，通道数为1。
+  
+  但串化因子的上限位10，如果并行数据是10位以上，比如为21位，此时只能增加串行数据的位宽（通道数）。将输入时钟7倍频，每个通道在上升沿的时候传递一位数据，故三个通道在每个上升沿传三位数据，分别是[20:14],[13:7],[6:0]。
+* LVDS数据速率 = LVDS时钟频率 × 串化因子
+  * 175Mb/s = 25MHz × 7
+* Parameter Settings:
+  * General
+    * LVDS的通道数 = 3（Channels number）
+    * 串化因子(数据位宽) = 7（deserialization factor）
+  * Frequency/PLL settings
+    * 单通道的LVDS数据速率 = 175Mb/s（output data rate）
+    * LVDS时钟速率 = 25MHz（input clock rate）
+    * 使用pll复位端口（Use 'pll_areset' input port）
+    * 寄存器tx_in使用 = (tx_inclock)（Register 'tx_in' input port using）
+  * Transmitter settings
+    * 输出时钟分频系数 = 7（outclock divide factor）
+    * 输出时钟相位偏差 = 0.00（Specify phase alignment）
+    * 输出时钟占空比 = 57%（outclock ducy cycle）
+```verilog
+lvds	lvds_inst (
+	.pll_areset ( pll_areset_sig ),
+	.tx_in ( tx_in_sig ),
+	.tx_inclock ( tx_inclock_sig ),
+	.tx_out ( tx_out_sig ),
+	.tx_outclock ( tx_outclock_sig )
+	);
+```
+
+![lvds_time](https://github.com/skycity11/skycity11.github.io/raw/master/img/LVDS/lvds_time.png)
+
+
+—————————————————————————————————————
+
+[HOME][home]
+
+[home]: https://vinericy.cn
+

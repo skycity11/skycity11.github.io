@@ -5,6 +5,8 @@ subtitle:   "CommonJS，RequireJS，SeaJS 归纳笔记"
 date:       2015-05-25
 author:     "Hux"
 header-img: "img/post-bg-js-module.jpg"
+category: past
+hidden: true
 catalog: true
 published: false
 tags:
