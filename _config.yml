@@ -93,3 +93,11 @@ friends:
   [
     { title: "Verdvana", href: "http://verdvana.cn/" },
   ]
+
+# 在首页只显示未隐藏的文章
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      hidden: false
