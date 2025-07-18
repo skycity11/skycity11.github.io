@@ -3,7 +3,7 @@ layout:       post
 title:        "每日任务"
 author:       "Eric"
 header-style: text
-catalog:      true
+catalog: true
 tags:
     - daily
     - task
