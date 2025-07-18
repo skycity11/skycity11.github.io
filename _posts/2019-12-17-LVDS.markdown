@@ -69,5 +69,5 @@ lvds	lvds_inst (
 
 [HOME][home]
 
-[home]: https://vinericy.cn
+[home]: https://blog.skycity11.xyz
 

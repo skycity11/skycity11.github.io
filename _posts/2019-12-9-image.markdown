@@ -106,5 +106,5 @@ categories: FPGA Verilog Image-Processing
 
 [HOME][home]
 
-[home]: https://vinericy.cn
+[home]: https://blog.skycity11.xyz
 

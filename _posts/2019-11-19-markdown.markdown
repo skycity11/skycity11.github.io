@@ -27,7 +27,7 @@ categories: Markdown 语法说明
 —————————————————————————————————————
 
 
-[home]: https://vinericy.cn
+[home]: https://blog.skycity11.xyz
 
 label
 --
@@ -48,4 +48,4 @@ label
 _斜体_
 
 [HOME][home]
-[home]: https://vinericy.cn
+[home]: https://blog.skycity11.xyz

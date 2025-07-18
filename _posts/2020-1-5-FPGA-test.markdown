@@ -45,5 +45,5 @@ assign dout[0] = din[1] ^ din[0];
 
 [HOME][home]
 
-[home]: https://vinericy.cn
+[home]: https://blog.skycity11.xyz
 

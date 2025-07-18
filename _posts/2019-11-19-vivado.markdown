@@ -27,5 +27,5 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets rst_n_IBUF]
 
 [HOME][home]
 
-[home]: https://vinericy.cn
+[home]: https://blog.skycity11.xyz
 

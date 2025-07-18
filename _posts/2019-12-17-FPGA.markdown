@@ -25,5 +25,5 @@ FPGA组成三要素
 
 [HOME][home]
 
-[home]: https://vinericy.cn
+[home]: https://blog.skycity11.xyz
 
