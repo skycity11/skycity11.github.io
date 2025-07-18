@@ -42,13 +42,16 @@ tags:
 hidden: true  # 不在首页显示
 category: work  # 属于 work 分类
 ```
+
 * 给**正常文章**设置，隐藏属性为**否**
+
 ```markdown
 hidden: false  # 在首页显示
 ```
 
 ### 2. 在_config.yml添加内容确保首页不显示 hidden 文章
 * 在首页只显示hidden属性为false的文章
+
 ```markdown
 defaults:
   - scope:
@@ -66,8 +69,8 @@ defaults:
 * **以我的index.html为例**
   * 有些个人博客（比如我）搭建时用了**分页插件**（比如**jekyll-paginate**），所以首页的 index.html 里用的是 `paginator.posts`，而不是 `site.posts`。但分页插件 `paginator`只在首页生效，所以/work页面还是需要`site.posts`，只需都替换成`site.posts`即可
 * **修改后**我的work/index.html如下
-
-```
+{% raw %}
+```html
 ---
 layout: page
 description: "「work」"
@@ -75,7 +78,7 @@ permalink: /work/
 ---
 
 {% for post in site.posts %}
-  {% if post.category ** "work" %} 
+  {% if post.category == "work" %} 
     <div class="post-preview">
         <a href="{{ post.url | prepend: site.baseurl }}">
             <h2 class="post-title">
@@ -102,8 +105,12 @@ permalink: /work/
 <hr>
 {% endfor %}
 ```
+{% endraw %}
 
 —————————————————————————————————————
+
 The end
+
 —————————————————————————————————————
+
 [首页](https://blog.skycity11.xyz)
