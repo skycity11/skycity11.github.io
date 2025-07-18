@@ -75,11 +75,11 @@ defaults:
 ---
 layout: page
 description: "「work」"
-permalink: /work/  
+permalink: /work/  # 设置访问路径
 ---
 
 {% for post in site.posts %}
-  {% if post.category == "work" %} 
+  {% if post.category == "work" %} # 如果为work分类的文章
     <div class="post-preview">
         <a href="{{ post.url | prepend: site.baseurl }}">
             <h2 class="post-title">
@@ -102,7 +102,7 @@ permalink: /work/
             Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
         </p>
     </div>
-  {% endif %} 
+  {% endif %} # end for 确保如果为work分类的文章
 <hr>
 {% endfor %}
 ```
