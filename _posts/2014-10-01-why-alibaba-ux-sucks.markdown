@@ -5,6 +5,8 @@ subtitle:   "或许这就是所谓的企业 DNA "
 date:       2014-10-1 12:00:00
 author:     "Hux"
 header-img: "img/post-bg-alibaba.jpg"
+category: past
+hidden: true
 tags:
     - 知乎
     - 产品
