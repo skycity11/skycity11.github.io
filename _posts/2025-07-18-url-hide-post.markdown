@@ -67,8 +67,7 @@ defaults:
 
 ### 3. 创建 /work/index.html 页面
 * 该步骤目的是在`https://<your-site>/work`中**只显示**work分类的文章
-* 将根目录的index.html直接**复制**到新建目录work下，在此基础上做一些修改
-
+* 将根目录的index.html直接**复制**到新建目录work下，在此基础上做一些修改  
 1. Front Matter中加入`permalink: /work/`，以设置访问路径是`https://<your-site>/work`
 2. 在`for post in site.posts`中加入 {% if post.category ** "work" %}的判断，并用`{% endif %}`收尾，以确保只显示work分类的文章
 * **以我的index.html为例**
