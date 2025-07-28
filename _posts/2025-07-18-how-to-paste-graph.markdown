@@ -53,24 +53,22 @@ tags:
 
 #### 2. vscode中的设置
 
-1. 接下来，使用vscode编辑器，安装**Markdown Image**插件
+1. 接下来，使用vscode编辑器，安装**Markdown Image**插件  
 ![图 0](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/07319afbc7e7c4c6a7532298750e914a01f5452116c27608e2f96712e570841a.png)  
 
-2. 进入插件设置，选择GitHub作为上传图片的方式，然后点击设置项目
+2. 进入插件设置，选择GitHub作为上传图片的方式，然后点击设置项目  
 ![图 1](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/bc0b9fa62a4bc16dd306b772637933b91e55c7746a875215795743aa5654ae5b.png) 
 
-3. 需要填的内容为这4项，第二项填入之前保存的token，第三项填入新建的github仓库，第一项是为保存的图片新建仓库的一级目录
+3. 需要填的内容为这4项，第二项填入之前保存的token，第三项填入新建的github仓库，第一项是为保存的图片新建仓库的一级目录  
 ![图 11](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/6da92424fb47ff2ff0a34ce0b32f209a69300acae1353f139362b4c8c9c5c52f.png)  
 
-4. 之后就可以通过右键粘贴图片，或者快捷键`Shift+Alt+V`粘贴图片链接，如
+4. 之后就可以通过右键粘贴图片，或者快捷键`Shift+Alt+V`粘贴图片链接，如  
 ![图 10](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/1add83bb73a1946b6473d5d0c8e7d08836b1310406bf74bbaf092ccfc76639b0.png)  
 
 *注：很偶尔会出现上传不成功，导致粘贴不了的问题，可能是服务器卡了，过一会儿再试即可*
 
-—————————————————————————————————————
-
-The end
-
+—————————————————————————————————————  
+The end  
 —————————————————————————————————————
 
 [首页](https://blog.skycity11.xyz)
