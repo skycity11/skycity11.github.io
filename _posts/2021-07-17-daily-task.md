@@ -26,6 +26,12 @@ hidden: true
    1. 🟢 uniclk&clk_core内部没有rst同步模块，需要规范软件对ai sys软复位行为
 2. 🟡 mem floating——ongoing
 3. 🟡 确认stc R24-01-02最新check list是否还存在问题
-4. 🔴 
-5. 🟡
+4. 🔵 ai clk_glue 修改完毕 
+5. 🟡 地址回绕问题确认
+6. 🟡 worklog填写
+7. 🔵 sync_buf_idma中regfile2p_16x289
+8. 🟡 ocm 1MB计算过程 ddl 8.4
+9. 🔵 sync_buf wr/rd问题
+10. 🔵 画lowpower/reset arch/clock arch 参考mm sys 
+11. 🔵 clk gui & dvfs 了解&try run
 
