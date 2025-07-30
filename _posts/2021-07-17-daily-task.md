@@ -19,8 +19,10 @@ hidden: true
 > 2025/7/17  
 1. 🟢 10 tag release邮件
 2. 🟢 s6p ai arch更新  
+
 > 2025/7/18  
 1. 🔴 changelist  
+
 > 2025/7/29  
 1. 🟢 后仿波形确认
    1. 🟢 uniclk&clk_core内部没有rst同步模块，需要规范软件对ai sys软复位行为
@@ -34,4 +36,7 @@ hidden: true
 9. 🔵 sync_buf wr/rd问题
 10. 🔵 画lowpower/reset arch/clock arch 参考mm sys 
 11. 🔵 clk gui & dvfs 了解&try run
+12. 🔴 加入26m的源以后，为何能保证复位的时候没有时钟
+13. 🔵 77对比21 为何svt增加，lvt减少？
+14. 🟡 lp stat？mem_fw_eb 改成其他值配一下？
 
