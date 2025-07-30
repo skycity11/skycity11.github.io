@@ -18,9 +18,9 @@ hidden: true
 
 > 2025/7/17  
 1. 🟢 10 tag release邮件
-2. 🟢 s6p ai arch更新
+2. 🟢 s6p ai arch更新  
 > 2025/7/18  
-1. 🔴 changelist
+1. 🔴 changelist  
 > 2025/7/29  
 1. 🟢 后仿波形确认
    1. 🟢 uniclk&clk_core内部没有rst同步模块，需要规范软件对ai sys软复位行为
