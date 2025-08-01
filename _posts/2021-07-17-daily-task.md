@@ -31,7 +31,7 @@ hidden: true
 3. 🟢 确认stc R24-01-02最新check list是否还存在问题
 4. 🔵 ai clk_glue 修改完毕 
 5. 🟡 地址回绕问题确认
-6. 🟡 worklog填写
+6. 🟢 worklog填写
 7. 🔵 sync_buf_idma中regfile2p_16x289
 8. 🟡 ocm 1MB计算过程 ddl 8.4
 9.  🔵 sync_buf wr/rd问题
@@ -41,3 +41,12 @@ hidden: true
 13. 🔵 77对比21 为何svt增加，lvt减少？
 14. 🟡 lp stat？mem_fw_eb 改成其他值配一下？
 
+> 2025/7/31
+1. 🔴 bugzila  
+2. 🟢 changlist加上还没修改代码的点
+3. 🟡 让npu ip出一版带ulvt u2p memory的版本
+
+> 2025/8/1
+1. 🟢 flat cdc  清理
+2. 🟢 changelist review
+   1. 🔵 matrix的write outstanding是否能配置为64
