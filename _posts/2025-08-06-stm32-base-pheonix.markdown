@@ -75,6 +75,7 @@ tags:
       2. [参考视频](https://www.bilibili.com/video/BV12o5vzwEPp?spm_id_from=333.788.videopod.episodes&vd_source=82e7af664af41b55402c040af5862bde&p=2)工程代码，实现MPU6050初始化配置
       3. 实现X轴/Y轴位移手势指令识别
    3. 用STM32+语音芯片实现音频播放、切换、控制功能
+      1. [参考视频](https://www.bilibili.com/video/BV1hsbAesE6F/?spm_id_from=333.337.search-card.all.click&vd_source=82e7af664af41b55402c040af5862bde)
    4. 用USB模块实现调试、连接电脑烧录音频音频功能
    5. 用电池模块实现设备离线、充电功能
 2. 画原理图、PCB实现以STM32、MPU6050、语音芯片为主体的硬件电路，投稿嘉立创
