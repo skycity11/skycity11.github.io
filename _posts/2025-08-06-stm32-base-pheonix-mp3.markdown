@@ -22,7 +22,9 @@ tags:
 
 ### 想法来源
 
-由于最近沉迷《逆转裁判》123系列（又称逆转裁判成步堂传），经常幻想自己在法庭上学成步堂拿手指人并大喊「異議あり！」![图 1](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/085166ff8e2a9773e93c2b4c5b9932e292a705d061db87ac26c8cc2266c6c6cf.png)
+由于最近沉迷《逆转裁判》123系列（又称逆转裁判成步堂传），经常幻想自己在法庭上学成步堂拿手指人并大喊「異議あり！」
+
+![图 1](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/085166ff8e2a9773e93c2b4c5b9932e292a705d061db87ac26c8cc2266c6c6cf.png)
 
 加上由于NS上游玩无法切换日语配音，导致其经典台词「異議あり！」只能用中文「异议！」呈现，对此耿耿于怀。又无聊时刷到[b站视频](https://www.bilibili.com/video/BV19pGvzqETu/?spm_id_from=333.1391.0.0&vd_source=82e7af664af41b55402c040af5862bde)有up自己DIY了一款实体版「異議あり！」的小型播放器，支持手势操作和播放bgm功能，非常中二，又想起了自己的专业，总该干点老本行了，遂有了自己制作这个播放器的想法。
 
