@@ -1715,3 +1715,18 @@ img::-moz-selection {
         --waline-content-font-size: 1em;
     }
 }
+
+#waline {
+  font-size: 16px !important; /* 设置新的基准大小 */
+}
+
+/* 强制覆盖编辑器字体 */
+#waline .wl-editor {
+  font-size: 1em !important; /* 现在1em=16px */
+  min-height: 140px !important; /* 等比例调整 */
+}
+
+/* 同步调整其他使用em的单位 */
+#waline .wl-comment {
+  font-size: 1em !important;
+}
