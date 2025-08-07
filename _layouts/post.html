@@ -117,23 +117,17 @@ layout: default
 <!-- 网易云跟帖JS代码 end -->
 {% endif %}
 
-
-{% if site.disqus_username %}
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{page.id}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+<div id="waline"></div>
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<script>
+  Waline.init({
+    el: '#waline',
+    serverURL: 'https://waline-skycity11s-projects.vercel.app', // 替换为你的 Waline 后端地址
+    path: '<%= post.path %>',
+    dark: 'html[data-theme="dark"]', // 适配暗黑模式（可选）
+  });
 </script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
+
 
 
 {% if site.anchorjs %}
