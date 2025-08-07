@@ -48,10 +48,10 @@ layout: default
                 </ul>
                 <hr style="visibility: hidden;">
                     <!-- waline 评论框 start -->
-                    <div class="comment">
+                    <div class="waline-wrapper" style="margin-top: 50px;">
                     <div id="waline"></div>
                     </div>
-                    <script src="https://cdn.jsdelivr.net/npm/@waline/client@2/dist/waline.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js"></script>
                     <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         Waline.init({
@@ -59,6 +59,9 @@ layout: default
                         serverURL: 'https://waline-skycity11s-projects.vercel.app',
                         path: window.location.pathname,
                         dark: 'html[data-theme="dark"]',
+                        locale: {
+                            placeholder: '欢迎留言...（支持Markdown语法）'
+                        }
                         });
                     });
                     </script>

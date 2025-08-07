@@ -1694,3 +1694,26 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
+/* Waline 专用修复 */
+.waline-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#waline {
+  --waline-font-size: 16px;
+  --waline-border-radius: 6px;
+  --waline-bgcolor: #fff;
+  --waline-border: 1px solid #eee;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .waline-wrapper {
+    padding: 0 10px;
+  }
+  #waline {
+    --waline-font-size: 14px;
+  }
+}
