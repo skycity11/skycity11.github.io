@@ -49,17 +49,11 @@ layout: default
                 <hr style="visibility: hidden;">
 
                 {% if site.disqus_username %}
-                <!-- disqus 评论框 start -->
+                <!-- waline 评论框 start -->
                 <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
+                    <div id="waline" class="waline"></div>
                 </div>
-                <!-- disqus 评论框 end -->
-                {% endif %}
-
-                {% if site.netease_comment %}
-                <!-- 网易云跟帖 评论框 start -->
-                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                <!-- 网易云跟帖 评论框 end -->
+                <!-- waline 评论框 end -->
                 {% endif %}
             </div>  
 
@@ -96,28 +90,7 @@ layout: default
     </div>
 </article>
 
-<!-- add support for mathjax by voleking-->
-{% if page.mathjax %}
-  {% include mathjax_support.html %}
-{% endif %}
-
-{% if site.netease_comment %}
-<!-- 网易云跟帖JS代码 start -->
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<script>
-  var cloudTieConfig = {
-    url: document.location.href, 
-    sourceId: "",
-    productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",
-    target: "cloud-tie-wrapper"
-  };
-  var yunManualLoad = true;
-  Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-</script>
-<!-- 网易云跟帖JS代码 end -->
-{% endif %}
-
-<div id="waline"></div>
+<!-- waline评论区代码 start -->
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <script>
   Waline.init({
@@ -127,7 +100,12 @@ layout: default
     dark: 'html[data-theme="dark"]', // 适配暗黑模式（可选）
   });
 </script>
+<!-- waline评论区代码 end -->
 
+<!-- add support for mathjax by voleking-->
+{% if page.mathjax %}
+  {% include mathjax_support.html %}
+{% endif %}
 
 
 {% if site.anchorjs %}
