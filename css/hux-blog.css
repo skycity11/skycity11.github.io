@@ -1702,18 +1702,16 @@ img::-moz-selection {
 }
 
 #waline {
-  --waline-font-size: 16px;
-  --waline-border-radius: 6px;
-  --waline-bgcolor: #fff;
-  --waline-border: 1px solid #eee;
+    --waline-font-size: 18px; /* 基础字体增大 */
+    --waline-content-font-size: 1.05em; /* 内容稍大 */
+    --waline-border-radius: 6px;
+    --waline-bgcolor: #fff;
+    --waline-border: 1px solid #eee;
 }
 
-/* 移动端适配 */
 @media (max-width: 768px) {
-  .waline-wrapper {
-    padding: 0 10px;
-  }
-  #waline {
-    --waline-font-size: 14px;
-  }
+    #waline {
+        --waline-font-size: 16px; /* 移动端也相应增大 */
+        --waline-content-font-size: 1em;
+    }
 }
