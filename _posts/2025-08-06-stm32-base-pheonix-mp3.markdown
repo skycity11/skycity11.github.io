@@ -36,11 +36,11 @@ tags:
 
 （不要问我为什么拖了这么久）
 
-### 目标指定
+### 1 目标指定
 
 能做出来一个能同时播放游戏的语音及bgm、支持手势操作切换歌曲、支持USB烧录歌曲、能通过按键调节音量、能离线使用&能充电、有外壳的音乐播放器即可，功能实现为主，大小、功耗、外观不追求太多。
 
-### 功能划分
+### 2 功能划分
 
 1. 电路方面
    1. 主控芯片，应该没啥门槛，能使就行
@@ -67,7 +67,7 @@ tags:
    1. 3D打印外壳，具体设计待定，先把电路功能做好再去求教Q老师
 
 
-### 计划步骤
+### 3 计划步骤
 1. 先用现成的（"这不是现成的？"）核心板+面包板+功能芯片分步实现核心功能
    1. 熟悉核心板相关
       1. 购买[STM32最小系统板+面包板硬件平台](https://item.taobao.com/item.htm?ak=27696150&ali_trackid=2%3Amm_2038330052_2851900351_114774900234%3A1754491472028_189881609_0&bxsign=tbkj4UizbkIFcsC-D8vNM3N4MusMQIMS2NgfROIovyxjPIVeegZP8-JDXnAIQ9N0GkbEW5EfnWOyu5q9VHxazJTKKfPrKJLpLftDQ9jX2wRVGk4FE04KUv2HWxuNCZo9vkpnjjleQ6Luy2Jw6SxfbWF3YyQD5qsChRcr3UU0jjE-BnaPsCEYERUIx4FwScGjW7z&id=655451342180&union_lens=lensId%3ATAPI%401701262245%40212c1916_0f45_18c1b21c002_8f11%4001%3Brecoveryid%3A189881609_0%401754491472032)，套件内容包括：
@@ -90,8 +90,73 @@ tags:
 
 > update at 2025/8/6
 
+### 4 实际开干
+
+#### 4.1 MPU6050学习
+
+##### 4.1.1 原理
+
+* MPU6050是一个6轴姿态传感器，可以测量芯片自身X、Y、Z轴的加速度、角速度参数，通过数据融合，可进一步得到姿态角，常应用于平衡车、飞行器等需要检测自身姿态的场景
+  
+![图 2](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/ef4adfc59dfa2f44c53df58f0485b1af2f3f40e8090499c0e2b805489989a2ad.png)  
+
+* 3轴加速度计（Accelerometer）：测量X、Y、Z轴的加速度
+  * 实际上是一个测力计
+  * 可以理解为坐在车里，车子突然往前开，椅背感觉到力
+  * 静态稳定，动态不稳定
+
+![图 3](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/3aa78a54bd67128e62a8a0a5b4245b3cf0b48fe304fa23a3ddc10a18812cdb5f.png)  
+
+* 3轴陀螺仪传感器（Gyroscope）：测量X、Y、Z轴的角速度
+  * 静态不稳定，动态稳定
+  * 可以理解为游乐场甩椅子，甩起来以后测两个椅子间的距离从而获得角速度
+
+![图 4](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/aa4b62b76a22fc4ec8a7f57a7a943b2b738c952fd524b49aa05e1557ffd32cf1.png)  
 
 
+##### 4.1.2 参数
+
+* 16位ADC采集传感器的模拟信号，量化范围：-32768~32767
+* 加速度计满量程选择：±2、±4、±8、±16（g）
+  * 如选择为±2，那么32767对应的就是2g加速度
+  * 量程越小，测量就会更细腻
+* 陀螺仪满量程选择： ±250、±500、±1000、±2000（°/sec）
+  * 运动剧烈，就把量程调高，避免加速度/角速度超出量程
+* 可配置的数字低通滤波器
+  * 如果抖动太厉害，就开启，可以让数据平缓一点
+* 可配置的时钟源，可配置的采样分频
+  * 控制AD采样的快慢 
+* I2C从机地址：1101000（AD0=0）；1101001（AD0=1）
+  * 由于I2C读写位的存在，所以0x68(1101000)会左移一位在加上读写位，也就变成了0xD0（读），0xD1（写）
+         
+![图 5](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/070df6919e69e1fb112d2bee6fbbf35d650bb1fc2d200b5b68c7fb868cc0a1d9.png)  
+
+ 
+##### 4.1.3 电路
+
+![图 6](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/807cd05ee9ec4f4a6002b445c7d5b483025b2c3a693f82a0741bd08f3a2a5520.png) 
+
+
+| 引脚 | 功能                |
+| :--:|:--------: |
+| XCL、XDA | 主机I2C通信引脚 | 
+| AD0 | 从机地址最低位       |
+| INT | 中断信号输出 |
+
+* SCL、SDA已经接如上拉电阻
+* XCL、XDA
+  * 通常用于外接磁力计或磁力计，MPU6050通过I2C主动访问这些芯片，经过内部DMP进行数据融合和姿态解算
+  * 用于扩展功能，比如引入绕z轴角度（偏航角）（类似于指南针），或者无人机定高时，需要加气压计扩展为10轴，提供一个高度信息的稳定参考
+* AD0 已接入下拉电阻，默认为0
+* LDO 左上角，扩展5V供电
+
+##### 4.1.3 内部框图
+
+![图 7](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/709076e96a5622fc680d9662a55bc0f2776f5ae3b65e6abb95ca84fa4de168db.png) 
+
+* Self test
+  * 功能：自测模块，启动自测后，芯片内部会模拟一个外力施加在传感器上，导致传感器数据比平时大一些
+  * 使用：先开自测，再关自测，把两者数据相减得到自测响应，查阅手册，如果在范围内就没坏 
 
 
 
