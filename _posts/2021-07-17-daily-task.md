@@ -37,10 +37,10 @@ hidden: true
 9.  🔵 sync_buf wr/rd问题
 10. 🔵 画lowpower/reset arch/clock arch 参考mm sys 
 11. 🔵 clk gui & dvfs 了解&try run
-12. 🔴 加入26m的源以后，为何能保证复位的时候没有时钟
+12. 🟢 加入26m的源以后，为何能保证复位的时候没有时钟
    1. 硬复位：26m clk有sys专用gate，pmu给ai上电复位时，pmu会在ai复位之前gate该时钟，复位释放之后才会释放，ai的配置时钟sel默认在26m，以此保证硬复位过程中不会有时钟
    2. 软复位：无法确保，没有对应gate反压，但S6软件不会使用
-13. 🔵 77对比21 为何svt增加，lvt减少？
+13. 🟢 77对比21 为何svt增加，lvt减少？
 14. 🟡 lp stat？mem_fw_eb 改成其他值配一下？
 
 > 2025/7/31
@@ -52,8 +52,26 @@ hidden: true
 > 2025/8/1
 1. 🟢 flat cdc  清理
 2. 🟢 changelist review及action追踪
-   1. 🔵 matrix的write outstanding是否能够达到要求
+   1. 🟢 matrix的write outstanding是否能够达到要求
 
 > 2025/8/5
 1. 🟢 ai low power arch更新
 2. 🔴 ai clock arch绘制
+
+> 2025/8/8
+1. 🟡 沟通vdsp插slice问题
+   1. vau相关的aw/ar通路是否能优化，不插slice
+      1. 将vau位置上挪后（加region），vdsp2vau得到改善，但是vau2mtx 违例增加到0.13
+         1. mtx2mtx r通道路径，违例达0.33
+   2. cfg_s2 -> vdsp suboridinate也存在timing问题,约0.17
+      1. 需要将reg_slice配置为打拍
+   3. 
+2. 🟢 dbg bus是否为sys最新版本 
+3. 🟡 pcie，抓level shifter 延时
+4. 🟡 ase 跑完数据对比错误
+
+> 2025/8/11
+1. 🟢 S6P NPU+VDSP加PowerSwitch 实验结果讨论
+   1. 预计SYS内增加power switch后，IR可能会恶化1.5%到2.5%，可能需要在额外抬压50mV到0.90V才能改善IR问题
+2. 🟡 s6 ai后仿rst需要确认timing violation，预计只有clk core内部存在x态
+
