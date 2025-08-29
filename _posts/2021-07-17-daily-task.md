@@ -75,3 +75,7 @@ hidden: true
    1. 预计SYS内增加power switch后，IR可能会恶化1.5%到2.5%，可能需要在额外抬压50mV到0.90V才能改善IR问题
 2. 🟡 s6 ai后仿rst需要确认timing violation，预计只有clk core内部存在x态
 
+> 2025/8/20
+1. 🟡 vc里qogirs6pro_define.v ?
+2. 🟢 和泽峰确认mem_fw连接
+3. 🟢 和bingwei确认ai_clk_glue.V
