@@ -82,30 +82,64 @@ hidden: true
 
 
 > 2025/9/1
-1. 💛 ocm lack
+
+
 2. 💚 AI系统说明书，有两个AISYS的问题修改
 3. 💚 ai sys cv对齐会议
-4. 💛 截止9.3 PBS ai sys修改
+4. 💚 截止9.3 PBS ai sys修改
    1. 删除tower
    2. 删除axi top2ai异步桥？
-5. 💙 NPU 64K sram删减，等ip提供memory，评估删减面积
-   1. before：优化前是2个64KB的SRAM
+5. 💙 NPU 64K sram优化
+   1. before：2个64KB的SRAM
       1. 2048深度，256bit
-      2. ![图 1](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/d0f6431d4b21f3753384cb3cdb344801639a4b1f9553297945a4e10843e756d1.png)  
-   2. after：优化后是2个32KB的SRAM
-      1. 待着cfg跑无法匹配
-         1. ![图 2](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/607ee07f7a61af83dd5c9bf9bc1b2950f86904f66755bca2a61914cbd3330633.png) 
-      2. 去掉cfg后可以匹配
-         1. ![图 3](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/1d41551bfc81a2b5166787c6a0cccbd32418a55d15da87c1d10c5bb816639611.png)  
+      2. ![图 1](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/ccfbb1c409663c46b5223d2147352a7c6421d823e01481549258c9c3b35d5b24.png)  
+   2. after：2个32KB的SRAM
+      1. 1024深度，256bit
+      2. ![图 3](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/1d41551bfc81a2b5166787c6a0cccbd32418a55d15da87c1d10c5bb816639611.png)  
+   3. conclusion：预计减小0.0159mm2（综合面积）
  
 > 2025/9/2
 1. 💛 sta检查时钟周期正确
 2. 💛 ai2pcie 通路
    1.  matrix+异步桥w端
    2.  matrix具体细节待确认
+   3.  💚 pcie port fix
+       1.  async bridge w
+       2.  lp_stat_ai2pcie
 3. 💚 ai clk glue还是有点问题，div_sel应该怎么选
-    1.  ![图 4](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/1e263fedcc688a0b1e2ebc3c7db153f731d9208144ef384f9b57b25d77d8f6b2.png)  
+    1.  改之前![图 4](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/1e263fedcc688a0b1e2ebc3c7db153f731d9208144ef384f9b57b25d77d8f6b2.png)  
+    2.  改之后![图 5](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/ce16c95b67a97ec205173641748c18f21a0185671b3717e983d22c4ebc8dc288.png)  
+    3.  ![图 6](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/bf9ed745bc10079bcf3ecb2830e2b906642b514c469c48d51a20b1338c226439.png)  
 
-> 2025/9/2
+
+
+> 2025/9/4
 1. 💛 dvfs 更新ipa后对比rtl
 2. 💛 pr 更新timing 查看
+   1. ![图 7](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/87871bbb9b3ce2c2215a157c89abb530c4b19ac18c1538bc07fd12de21db8452.png)  
+
+3. 💛 slv fw进版更新
+4. 💛 dbg bus修改
+5. 💛 dv后仿 vio查看
+
+> 2025/9/5
+1. 💚 tower 006进版修改port位宽
+
+
+> 2025/9/8
+1. 💛 ocm slack
+   1. ![图 8](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/6162b7d837c28ae1113cf02e265a1e5210ff9c1c2d24e9e615af62161e967153.png)  
+   2. 现在大是因为multi bit，导致绕线很多
+2. 💛 data path是否合理
+   1. ![图 11](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/9e893551bbad432bba1a0903feaa10b6730b37621c79c8dd641f6c1fb6f334c6.png)  
+   2. ![图 12](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/e8cb201f2e6e7fb21f67b8e867ccb939f6ae1d60d84ffd83e335c54322e1da80.png)  
+
+> 2025/9/9
+1. 💛 clk tree是ulvt ll，瑞奇推荐使用ulvt
+2. 💛 后仿波形确认——第二轮回归的结果，vio还是得看，多关注下第一轮重点看的vio
+   1. ![图 13](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/aedb4441c4bfeca2e3f6e9f84018d2351112078f1baffb39b84166b96bcdb50f.png)  
+   2. ![图 14](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/92c102f884f2a7702d1319b9db13c26324250531b04c86d1c973a771bd543a1c.png)   
+3. 💙 ai实验室有个偏技术项目的开发, 主要是一个可配置(预计96T)算力ai sys层的开发
+   1. ![图 15](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/9b7ae9b1596473eba2734603d6a5bc7569ce2cd7ab96ba672f4c8811448a1683.png)  
+
+
