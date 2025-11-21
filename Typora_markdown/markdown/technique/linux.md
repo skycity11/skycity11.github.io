@@ -1,0 +1,1 @@
+<img src="../../image/linux/image-20251120145840108.png" alt="image-20251120145840108"  />

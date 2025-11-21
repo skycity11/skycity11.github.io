@@ -142,4 +142,60 @@ hidden: true
 3. 💙 ai实验室有个偏技术项目的开发, 主要是一个可配置(预计96T)算力ai sys层的开发
    1. ![图 15](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/9b7ae9b1596473eba2734603d6a5bc7569ce2cd7ab96ba672f4c8811448a1683.png)  
 
+4. 💛 ![图 16](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/3962cf471f0b02fe88fd75d9897bc723ebed96fba57953e9d11b8e197956a82f.png)  
 
+> 2025/9/11
+1. 💛 ai2pcie修改点总结
+   1. 加main_mtx_s4的lpc，asb_ai2pcie也用这个
+   2. asb_ai2pcie rst 用main_mtx的
+   3. mtx axi4, asb axi3
+   4. mtx lock 1bit, asb lock 2bit 
+   5. 需要多开3个ep的mailbox
+2. ❤️ dvfs ipa待合入，需要开3bit port 
+3. ❤️ 更新后的slv fw也需合入
+
+> 2025/9/16
+1. 💛 s6p ai性能指标
+   1. ![图 17](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/cbbc9da58733fc788e41b5737f418951d52eeb8a4983289affaa9b9b7b11ee90.png)  
+2. 后仿复位改安全复位case
+   1. vau软复位改成安全复位之后，会force vdsp传输，等到总线idle之后再发起复位，case pass
+
+> 2025/10/13
+1. 💙 sdc加入0.85v
+2. 💙 mtx & slv fw给vdsp decode
+
+> 2025/10/24
+1. 💙 s6建议三档（0以下/常温/高温）
+   1. ![图 18](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/2d6298edcd79a4fff85f6a5c3747bc9c235d23c72a8427da261cdca6a3830b66.png)  
+   2. ![图 19](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/152b2e12a249b0a0669c435350dee7c458a95d0183eff2566ffc47babe365024.png)  
+   3. ![图 20](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/3d921eb9378d443b99e23b6f3e60d34f2255036f2cf13485632484ebd16c33c9.png) 
+   4. ![图 21](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/3118800cc4de2b50a6696326699ca3737669fe83362d8dffb633686883f9d4d3.png)  
+   5. ![图 22](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/a470598662f2456b6f019f3811bf0955b6ab248a21fd0b45e71a8572ecd885d5.png)  
+   6. 需不需要增加一个thm——待讨论
+   7. s6p后续仿真，定thm具体位置
+
+ > 2025/10/28
+1.  ![图 23](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/788bff95adb182eb39fe602cf90d71fadde7c613779763f60be1a8250b5cbeac.png)  
+    1.  erc报出来有clk on data![图 24](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/2e4209e3d2e579d61780292c03c515e0879d225ec93a4c6efce2d82f50e9a344.png)  
+    2.  换了clk_mux![图 25](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/c33e6709d9560c46d125cb24c1e4f949fd049e6dfbd3c49a4252dc7b5da79107.png)  
+    3.  但得换ckmux，否则在occ_bypass为1时会切到clk_scan_ate，后者为内部时钟，非外部低速时钟，影响npu/vdsp在低速下的binning![图 27](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/93be67525c9b5236ab3fae957e476bfa904cff973a5225b0213067df4eadfe22.png)  
+
+2.  cbuf memory有![图 26](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/1d188724465fdeaeabfe5e290bf71ebfe9d80b452e011714009eaf11e4908a2c.png)  
+
+3. 💙 ase controller PENY晚于SE一派拉低![图 28](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/2a1b73254f627b9517a1a7836ad04919cbc00429cb3cc06dc6f27ffc494f9185.png)  ![图 29](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/1d85759e46a9bd388ec63d64e3389a26b2732c7b0ef396e79489aceee7e480e9.png)  
+
+4. 💛 hld上传
+5. ❤️ fifo wr cmd和data是否能分离
+6.  dvfs busy拉到clk cfg mtx
+7.  反标featurelist
+8.  checklist
+9.  changelist
+10. 💛 面积变更项准备材料
+11. ❤️ uniclk mode默认值改成0
+12. async_bridge_w_ai2pcie*-/ 时钟接错
+13. dvfs ipa的en修改默认值![图 30](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/a8913d9de07ac0c8d49dfa64fddb38e5ddc959d3228d660accb70a040cb8acf0.png)  
+
+ > 2025/11/14
+1.  clk plan
+    1.  ![图 31](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/d4aafde5fe7418970500da9cdf7e3e9fc8de56eb4d570f24d4c3cdd0640384c5.png)  
+    2.  需要pull一下top
