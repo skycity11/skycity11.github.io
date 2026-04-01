@@ -16,3 +16,10 @@
 /keyword.*\n.*keyword2
 ```
 
+## 设置绝对行数/相对行数
+
+```cmd
+:set relativenumber		#相对行数
+:set norelativenumber 	#绝对行数
+```
+
