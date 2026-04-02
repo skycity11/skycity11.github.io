@@ -1694,24 +1694,27 @@ img::-moz-selection {
 .no-scroll {
   overflow-y: hidden;
 }
-/* Waline 专用修复 */
-.waline-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 15px;
+/* Giscus 评论区样式 */
+.giscus-wrapper {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #eeeeee;
+  position: relative;
 }
 
-#waline {
-    --waline-font-size: 18px; /* 基础字体增大 */
-    --waline-content-font-size: 1.05em; /* 内容稍大 */
-    --waline-border-radius: 6px;
-    --waline-bgcolor: #fff;
-    --waline-border: 1px solid #eee;
+.giscus-wrapper::before {
+  content: "评论";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  background: #ffffff;
+  padding: 0 12px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a3a3a3;
+  letter-spacing: 0.06em;
 }
 
-@media (max-width: 768px) {
-    #waline {
-        --waline-font-size: 16px; /* 移动端也相应增大 */
-        --waline-content-font-size: 1em;
-    }
+.giscus-wrapper .giscus {
+  width: 100%;
 }
