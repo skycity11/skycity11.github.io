@@ -1,0 +1,104 @@
+/* Giscus custom theme for hux-blog
+ * Primary: #0085a1 | Text: #404040 | Border: #eee
+ */
+
+:root {
+  --color-canvas-default:           #ffffff;
+  --color-canvas-subtle:            #f8f9fa;
+  --color-canvas-inset:             #f1f3f4;
+  --color-border-default:           #e8e8e8;
+  --color-border-muted:             #eeeeee;
+
+  --color-fg-default:               #404040;
+  --color-fg-muted:                 #6a737d;
+  --color-fg-subtle:                #a3a3a3;
+  --color-fg-on-emphasis:           #ffffff;
+
+  --color-accent-fg:                #0085a1;
+  --color-accent-emphasis:          #0085a1;
+  --color-accent-subtle:            rgba(0, 133, 161, 0.08);
+
+  --color-btn-text:                 #404040;
+  --color-btn-bg:                   #ffffff;
+  --color-btn-border:               #e0e0e0;
+  --color-btn-hover-bg:             #f4f9fa;
+  --color-btn-hover-border:         #0085a1;
+  --color-btn-active-bg:            #e8f5f7;
+  --color-btn-primary-text:         #ffffff;
+  --color-btn-primary-bg:           #0085a1;
+  --color-btn-primary-border:       #006f87;
+  --color-btn-primary-hover-bg:     #006f87;
+  --color-btn-primary-hover-border: #005a6e;
+  --color-btn-primary-disabled-bg:  #80c2d0;
+
+  --color-input-bg:                 #ffffff;
+  --color-input-border:             #e0e0e0;
+  --color-input-focus-border:       #0085a1;
+  --color-input-contrast-bg:        #f8f9fa;
+
+  --color-neutral-muted:            rgba(0, 0, 0, 0.05);
+  --color-neutral-emphasis:         rgba(0, 0, 0, 0.12);
+  --color-neutral-emphasis-plus:    rgba(0, 0, 0, 0.18);
+
+  --color-header-bg:                #ffffff;
+  --color-header-divider:           #eeeeee;
+
+  --color-timeline-badge-bg:        #f4f9fa;
+
+  --color-social-reaction-bg-hover:          rgba(0, 133, 161, 0.08);
+  --color-social-reaction-bg-reacted-hover:  rgba(0, 133, 161, 0.14);
+
+  --color-prettylights-syntax-comment:          #6a737d;
+  --color-prettylights-syntax-constant:         #0085a1;
+  --color-prettylights-syntax-entity:           #6f42c1;
+  --color-prettylights-syntax-storage-modifier-import: #24292e;
+  --color-prettylights-syntax-entity-tag:       #22863a;
+  --color-prettylights-syntax-keyword:          #d73a49;
+  --color-prettylights-syntax-string:           #032f62;
+  --color-prettylights-syntax-variable:         #e36209;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #b31d28;
+  --color-prettylights-syntax-invalid-illegal-text:         #fafbfc;
+  --color-prettylights-syntax-invalid-illegal-bg:           #b31d28;
+  --color-prettylights-syntax-carriage-return-text:         #fafbfc;
+  --color-prettylights-syntax-carriage-return-bg:           #d73a49;
+  --color-prettylights-syntax-string-regexp:                #22863a;
+  --color-prettylights-syntax-markup-list:                  #735c0f;
+  --color-prettylights-syntax-markup-heading:               #005cc5;
+  --color-prettylights-syntax-markup-italic:                #24292e;
+  --color-prettylights-syntax-markup-bold:                  #24292e;
+  --color-prettylights-syntax-markup-deleted-text:          #b31d28;
+  --color-prettylights-syntax-markup-deleted-bg:            #ffeef0;
+  --color-prettylights-syntax-markup-inserted-text:         #22863a;
+  --color-prettylights-syntax-markup-inserted-bg:           #f0fff4;
+  --color-prettylights-syntax-markup-changed-text:          #e36209;
+  --color-prettylights-syntax-markup-changed-bg:            #ffebda;
+  --color-prettylights-syntax-markup-ignored-text:          #f6f8fa;
+  --color-prettylights-syntax-markup-ignored-bg:            #444d56;
+  --color-prettylights-syntax-meta-diff-range:              #6f42c1;
+  --color-prettylights-syntax-sublimelinter-gutter-mark:    #444d56;
+
+  /* Typography */
+  --font-size-small:    13px;
+  --font-size-base:     15px;
+  --line-height-base:   1.7;
+  --font-family-sans:   -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
+                        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-family-mono:   "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  /* Border radius */
+  --border-radius-small:   4px;
+  --border-radius-medium:  6px;
+  --border-radius-large:   8px;
+}
+
+/* Remove heavy box shadows; use subtle borders instead */
+.gsc-main .gsc-comment-box,
+.gsc-main .gsc-comment {
+  box-shadow: none;
+  border-radius: var(--border-radius-medium);
+}
+
+/* Slightly tighter header */
+.gsc-header {
+  padding-bottom: 12px;
+}
