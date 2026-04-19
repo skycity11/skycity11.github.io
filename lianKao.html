@@ -1,0 +1,104 @@
+---
+layout: page
+title: "港澳台联考"
+description: "面向 2027 届考生的港澳台联考调研与升学决策资料库"
+header-img: "img/bg-little-universe.jpg"
+header-mask: 0.4
+permalink: /lianKao/
+---
+
+<style>
+.lk-section { margin-top: 3em; }
+.lk-section h2 { border-bottom: 1px solid #eee; padding-bottom: .4em; margin-bottom: 1em; }
+.lk-intro { background: #f8f8f8; border-left: 4px solid #0085a1; padding: 1em 1.4em; margin-bottom: 2em; }
+.lk-intro p { margin: .4em 0; }
+.lk-timeline { list-style: none; padding-left: 0; }
+.lk-timeline li { padding: .5em 0; border-bottom: 1px dashed #e8e8e8; }
+.lk-timeline li:last-child { border-bottom: none; }
+.lk-timeline .lk-date { display: inline-block; min-width: 8em; color: #0085a1; font-weight: 600; }
+.lk-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1em; }
+.lk-cat-card { border: 1px solid #eee; border-radius: 6px; padding: 1em 1.2em; background: #fff; }
+.lk-cat-card h3 { margin-top: 0; font-size: 1.1em; }
+.lk-cat-card .lk-count { color: #999; font-size: .9em; }
+.lk-post-list { list-style: none; padding-left: 0; margin: 0; }
+.lk-post-list li { padding: .35em 0; }
+.lk-post-list .lk-post-date { color: #999; font-size: .85em; margin-right: .6em; }
+.lk-empty { color: #aaa; font-style: italic; font-size: .9em; }
+.lk-all-posts { margin-top: 2em; }
+</style>
+
+<div class="lk-intro">
+    <p><strong>这是什么？</strong> 一个为 2027 届港澳台联考 + 高考考生建立的长期资料库，用来收集政策、院校、分数线、真题、备考经验与过来人访谈，辅助升学方向决策。</p>
+    <p><strong>为什么做？</strong> 联考与高考的路径差异很大（考试范围、招生院校、录取分数线、备考节奏），需要在"专攻联考 / 两条腿走路 / 只走高考"之间做取舍——这份资料库希望把分散的信息收拢在一处。</p>
+    <p><strong>怎么更新？</strong> 每份素材以一篇 post 形式发布，打上 <code>港澳台联考</code> 主标签 + 子类标签（如 <code>政策</code>、<code>院校</code>）。本页会自动按类别聚合最新内容。</p>
+</div>
+
+<!-- 关键时间线 -->
+<div class="lk-section">
+    <h2>关键时间线（2027 届视角）</h2>
+    <ul class="lk-timeline">
+        <li><span class="lk-date">2026 春 — 夏</span>信息收集期：政策研读、目标院校筛选、决定是否报考联考</li>
+        <li><span class="lk-date">2026 秋</span>联考报名窗口（具体日期以当年公告为准，通常 11 — 12 月）</li>
+        <li><span class="lk-date">2027 春</span>联考考试（通常 5 月）与高考最后冲刺重叠期</li>
+        <li><span class="lk-date">2027 年 6 月</span>高考</li>
+        <li><span class="lk-date">2027 年 6 — 7 月</span>联考与高考出分、志愿填报</li>
+    </ul>
+    <p class="lk-empty">上述节点为常规节奏示意，实际以当年教育部与联招办公告为准。具体年度安排会在"政策"分类中跟进。</p>
+</div>
+
+<!-- 分类聚合 -->
+<div class="lk-section">
+    <h2>按主题浏览</h2>
+    {% assign hmt_posts = site.posts | where_exp: "p", "p.tags contains '港澳台联考'" %}
+
+    <div class="lk-categories">
+        {% assign cats = "政策,院校,分数线,真题,备考经验,访谈" | split: "," %}
+        {% assign cat_desc = "官方文件、报名流程、考试大纲解读|可报考院校名单、专业设置、录取政策|历年录取分数线、难度对比|历年真题、模拟题、命题规律|学习方法、时间规划、心态调整|过来人经验、在校生分享、择校心得" | split: "|" %}
+
+        {% for cat in cats %}
+        {% assign idx = forloop.index0 %}
+        {% assign cat_posts = hmt_posts | where_exp: "p", "p.tags contains cat" %}
+        <div class="lk-cat-card">
+            <h3>{{ cat }} <span class="lk-count">({{ cat_posts.size }})</span></h3>
+            <p style="color:#888; font-size:.9em; margin:.2em 0 .8em;">{{ cat_desc[idx] }}</p>
+            {% if cat_posts.size > 0 %}
+            <ul class="lk-post-list">
+                {% for p in cat_posts limit: 5 %}
+                <li>
+                    <span class="lk-post-date">{{ p.date | date: "%m-%d" }}</span>
+                    <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="lk-empty">暂未收录，陆续补充中。</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- 全部文章 -->
+<div class="lk-section lk-all-posts">
+    <h2>全部收录（{{ hmt_posts.size }}）</h2>
+    {% if hmt_posts.size > 0 %}
+    <ul class="lk-post-list">
+        {% for p in hmt_posts %}
+        <li>
+            <span class="lk-post-date">{{ p.date | date: "%Y-%m-%d" }}</span>
+            <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+            {% if p.subtitle %}<span style="color:#999;"> — {{ p.subtitle }}</span>{% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="lk-empty">还没有收录文章，等第一份素材进来就会出现在这里。</p>
+    {% endif %}
+</div>
+
+<!-- 投稿/补充说明 -->
+<div class="lk-section">
+    <h2>如何贡献或补充素材</h2>
+    <p>如果你手上有相关资料（政策原文、真题、备考经验、在校生分享），欢迎通过博客首页的联系方式提供。</p>
+    <p style="color:#888; font-size:.9em;">发布规范（自用备忘）：post 的 <code>tags</code> 字段需同时包含 <code>港澳台联考</code> 与至少一个子类标签（政策 / 院校 / 分数线 / 真题 / 备考经验 / 访谈），本页会自动聚合。</p>
+</div>
