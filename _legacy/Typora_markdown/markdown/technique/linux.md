@@ -1,0 +1,3 @@
+<img src="../../image/linux/image-20251120145840108.png" alt="image-20251120145840108"  />
+
+![image-20260327100611039](../../image/linux/image-20260327100611039.png)

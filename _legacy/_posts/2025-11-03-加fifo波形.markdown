@@ -1,0 +1,39 @@
+---
+layout:       post
+title:        "模板，改hidden"
+author:       "Eric"
+header-style: text
+hidden:       true
+catalog:      true
+category:     technique
+tags:
+    - 模板
+
+---
+模板
+
+## 1 模板
+1. 模板
+![图 0](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/e4bfde5fe50c3f91d1eb03ecc3376a3745b9777cd700ee81bbcf7eba992e834e.png)  
+
+
+![图 1](https://cdn.jsdelivr.net/gh/skycity11/picture@master/pic/b7e4db4eb2c732f357f630d2f3811849874cb3effde30abbf7dda2f9485a4518.png)  
+
+
+
+
+
+
+
+
+
+
+
+
+—————————————————————————————————————
+
+Ongoing
+
+—————————————————————————————————————
+
+[首页](https://blog.skycity11.xyz)

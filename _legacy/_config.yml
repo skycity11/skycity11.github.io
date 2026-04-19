@@ -1,0 +1,121 @@
+# Site settings
+title: SkyCity's Blog
+SEOTitle: SkyCity's Blog
+header-img: img/home-bg.jpg
+email: SkyCity@gmail.com
+description: "这里是 SkyCity的个人博客，与你一起发现更大的世界"
+keyword: "Eric, SkyCity, 博客, 个人网站, 互联网, Web, Verilog, 芯片，设计，FPGA"
+url: "https://skycity11.github.io" # your host, for absolute URL
+baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
+
+# Publish posts or collection documents with a future date.
+future: true
+
+# SNS settings
+RSS: false
+weibo_username: SkyCity
+zhihu_username: SkyCity
+github_username: SkyCity
+twitter_username: SkyCity
+#facebook_username:  SkyCity
+#linkedin_username:  firstname-lastname-idxxxx
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude:
+  [
+    "less",
+    "node_modules",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "README.zh.md",
+  ]
+anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Disqus settings
+#disqus_username: SkyCity
+
+# Netease settings
+#netease_comment: false
+
+# Analytics settings
+# Baidu Analytics
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
+ga_domain: Eric.Ni
+
+# Sidebar settings
+sidebar: true # whether or not using Sidebar.
+sidebar-about-description: "天道酬勤 <br> React Team @ Meta"
+sidebar-avatar: https://github.com/SkyCity.png # use absolute URL, seeing it's used in both `/` and `/about/`
+
+# Featured Tags
+featured-tags: false # whether or not using Feature-Tags
+featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+# Friends
+friends:
+  [
+    { title: "Verdvana", href: "http://verdvana.cn/" },
+  ]
+
+# 在首页只显示未隐藏的文章
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      hidden: false
+
+# Waline
+# For more information: https://waline.js.org, https://github.com/walinejs/waline
+#waline:
+#  enable: true #是否开启
+#  serverURL: waline-skycity11s-projects.vercel.app # Waline #服务端地址，我们这里就是上面部署的 Vercel 地址
+#  placeholder: 请文明评论呀 # #评论框的默认文字
+#  avatar: mm # 头像风格
+#  meta: [nick, mail, link] # 自定义评论框上面的三个输入框的内容
+#  pageSize: 10 # 评论数量多少时显示分页
+#  lang: zh-cn # 语言, 可选值: en, zh-cn
+#  # Warning: 不要同时启用 `waline.visitor` 以及 `leancloud_visitors`.
+#  visitor: false # 文章阅读统计
+#  comment_count: true # 如果为 false , 评论数量只会在当前评论页面显示, 主页则不显示
+#  requiredFields: [] # 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]
+#  libUrl: # Set custom library cdn url
+
+
