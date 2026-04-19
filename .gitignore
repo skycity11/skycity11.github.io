@@ -1,13 +1,32 @@
-_site
-_posts/_draft
-_posts/_archive
-_archive
-node_modules
+# editor config
+**/.vscode/
 .vscode
+
+# dependencies
+node_modules/
+
+# generated types
+.astro/
+.vercel/
+
+# build output
+dist/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 *.log
-*.lock
-*.sh
+
+# private config
+.env
+
+# macOS
 .DS_Store
-.jekyll-cache
 */.DS_Store
 */*/.DS_Store
+
+# legacy Jekyll build artifacts (kept for reference; not built anymore)
+_legacy/_site
+_legacy/.jekyll-cache
